@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:controller="address.AddressDetailsController">
+    <content>
+        <GridPane hgap="10" vgap="10">
+
+            <Label text="Ország:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="countryField"/>
+
+            <Label text="Irányítószám:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="1" spacing="10" alignment="CENTER_LEFT">
+                <TextField maxWidth="70" fx:id="postcodeField"/>
+                <Label text="Város:"/>
+                <TextField minWidth="250" fx:id="cityField"/>
+            </HBox>
+
+            <Label text="Utca:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="10" alignment="CENTER">
+                <TextField fx:id="streetField"/>
+                <Label text="Házsszám:" />
+                <TextField maxWidth="50" fx:id="houseNrField"/>
+                <Label text="Postafiók:"/>
+                <TextField maxWidth="50" fx:id="mailboxField"/>
+            </HBox>
+
+            <Label text="Cím típusa:" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.halignment="RIGHT"/>
+            <HBox GridPane.rowIndex="3" GridPane.columnIndex="1" spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="addressTypeField"/>
+            </HBox>
+
+            <Label text="Cégkapcsolat: " GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+
+            <ListView fx:id="partnerListView" maxHeight="100" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+
+        </GridPane>
+    </content>
+</DialogPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:controller="address.AddressTemplateController">
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Hozzáadás címlistából:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="addressesComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="400"/>
+
+            <Label text="Ország:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="countryField"/>
+
+            <Label text="Irányítószám:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="2" spacing="10" alignment="CENTER_LEFT">
+                <TextField maxWidth="70" fx:id="postcodeField"/>
+                <Label text="Város:"/>
+                <TextField minWidth="250" fx:id="cityField"/>
+            </HBox>
+
+            <Label text="Utca:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <HBox GridPane.columnIndex="1" GridPane.rowIndex="3" spacing="10" alignment="CENTER">
+                <TextField fx:id="streetField"/>
+                <Label text="Házsszám:" />
+                <TextField maxWidth="50" fx:id="houseNrField"/>
+                <Label text="Postafiók:" />
+                <TextField maxWidth="50" fx:id="mailboxField"/>
+            </HBox>
+
+            <Label text="Cím típusa:" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.halignment="RIGHT"/>
+            <HBox GridPane.rowIndex="4" GridPane.columnIndex="1" spacing="10" alignment="CENTER_LEFT">
+                <ComboBox fx:id="addressTypeComboBox"/>
+                <TextField fx:id="idField" visible="false" text="0"/>
+            </HBox>
+        </GridPane>
+    </content>
+</DialogPane>

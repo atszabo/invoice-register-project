@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.TextField?>
+
+<DialogPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payment.PaymentDetailsController">
+    <content>
+        <GridPane hgap="10" vgap="10">
+
+            <Label text="Partner: " GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0" />
+            <TextField fx:id="partnerField" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="0" editable="false"/>
+
+            <Label text="Befizetés módja: " GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField fx:id="paymentMethodField" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false" />
+            <Label text="összege: " GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField fx:id="amountField" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" editable="false"/>
+            <TextField fx:id="currencyField" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" maxWidth="50" editable="false"/>
+            <Label text="dátum: " GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField fx:id="dateField" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="1" editable="false"/>
+
+            <Label text="Megyjegyzés " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextArea fx:id="noteArea" editable="false" maxHeight="50" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="2" />
+
+            <Label text="Befizetés elszámolása: " GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="3" />
+            <Label text="Befizetés egyenlege:" GridPane.columnIndex="4" GridPane.rowIndex="3" GridPane.halignment="RIGHT"/>
+            <TextField fx:id="balanceField" GridPane.columnIndex="5" GridPane.rowIndex="3" GridPane.halignment="LEFT" editable="false"/>
+            <TextField fx:id="balanceCurrencyField" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.halignment="LEFT" maxWidth="50" editable="false"/>
+
+
+            <TableView fx:id="paymentTableView" maxHeight="170" minHeight="100" minWidth="900" GridPane.columnIndex="0" GridPane.columnSpan="7" GridPane.rowIndex="4">
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+                <columns>
+                    <TableColumn text="Számla sorszáma">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="invoiceNr" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Fizetési határidő">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="dateOfDue" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Bruttó számla összeg" fx:id="grossAmountColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="grossAmount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Befizetett összeg" fx:id="payedAmountColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="payedAmount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Devizanem">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="currency" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn text="Befizetés devizanemében" fx:id="payedOriginalAmountColumn">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="payedOriginalAmount" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
+            </TableView>
+                 </GridPane>
+    </content>
+
+</DialogPane>

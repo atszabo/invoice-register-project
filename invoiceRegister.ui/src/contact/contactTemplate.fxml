@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:controller="contact.ContactTemplateController">
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <TextField fx:id="idField" visible="false" text="0"/>
+
+            <Label text="Hozzáadás kapcsolat listából:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="contactsComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="400"/>
+
+            <Label text="Név:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="nameField"/>
+
+            <Label text="Telefonszám:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="phoneNrField"/>
+
+            <Label text="Fax:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="faxNrField"/>
+
+            <Label text="E-mail:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="emailField"/>
+
+            <Label text="Megjegyzés:" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <TextArea GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="noteArea"/>
+        </GridPane>
+    </content>
+</DialogPane>

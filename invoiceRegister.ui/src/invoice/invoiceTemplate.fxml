@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<DialogPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="invoice.InvoiceTemplateController" fx:id="partnerDialogPane">
+    <content>
+        <GridPane hgap="10" vgap="10">
+            <Label text="Számla sorszáma:" alignment="CENTER_RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="invoiceNrField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Partner:" GridPane.halignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="partnerComboBox" maxWidth="200"/>
+            <Button text="Új Partner" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#showPartnerTemplate"/>
+            <Label text="Kapcsolattartó:" GridPane.halignment="RIGHT" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            <ComboBox GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.columnSpan="2" fx:id="contactComboBox" maxWidth="200"/>
+
+
+            <Label text="Devizanem:" GridPane.halignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="currencyComboBox" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Áfa:" GridPane.halignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="vatComboBox" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+            <Label text="Fizetési mód:" GridPane.halignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <ComboBox fx:id="paymentMethodComboBox" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+
+            <Label text="Számla kelte:" GridPane.halignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <DatePicker fx:id="dateOfInvoiceDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Label text="Számla teljesítése:" GridPane.halignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+            <DatePicker fx:id="dateOfPerformanceDatePicker" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+            <Label text="fizetési határidő:" fx:id="dateOfDueDateLabel" GridPane.halignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+            <DatePicker fx:id="dateOfDueDatePicker" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+
+            <Label text="Nettó összeg:" GridPane.halignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="netAmountField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <Label text="Bruttó Összeg:" GridPane.halignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+            <Label fx:id="grossAmountLabel" text="0.0" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+            <Label text="Rendszám:" GridPane.halignment="RIGHT" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+            <TextField fx:id="regNrField" GridPane.columnIndex="5" GridPane.rowIndex="4" maxWidth="80"/>
+
+            <Label text="Megjegyzés:" GridPane.halignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextArea fx:id="noteArea" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="5" maxHeight="50"/>
+        </GridPane>
+    </content>
+</DialogPane>
